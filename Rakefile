@@ -7,9 +7,7 @@ end
 task default: :test_sauce
 
 task :parallel_run do
-  ENV['app'] = 'https://github.com/saucelabs-sample-test-frameworks/GuineaPig-Sample-App/blob/master/iOS/simulator/GuineaPig-sim-debug.app.zip'
-  ENV['deviceOrientation'] = 'portrait'
-  ENV['platformName'] = 'iOS'
+  ENV['app'] = 'https://github.com/saucelabs-sample-test-frameworks/GuineaPig-Sample-App/blob/master/iOS/simulator/GuineaPig-sim-debug.app.zip?raw=true'
 
   system 'parallel_split_test spec'
 end
