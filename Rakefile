@@ -11,7 +11,7 @@ task :parallel_run do
   ENV['deviceOrientation'] = 'portrait'
   ENV['platformName'] = 'iOS'
 
-  system 'parallel_rspec spec'
+  system 'parallel_split_test spec'
 end
 
 task :iPad_Air_2_Simulator do
