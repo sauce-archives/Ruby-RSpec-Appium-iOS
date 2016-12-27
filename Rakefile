@@ -9,7 +9,12 @@ task default: :test_sauce
 task :parallel_run do
   ENV['app'] = 'https://github.com/saucelabs-sample-test-frameworks/GuineaPig-Sample-App/blob/master/iOS/simulator/GuineaPig-sim-debug.app.zip?raw=true'
 
-  system 'parallel_split_test spec'
+  begin
+    @success = true if @success.nil?
+    @result = system 'parallel_split_test spec'
+  ensure
+    @success &= @result
+  end
 end
 
 task :iPad_Air_2_Simulator do
@@ -42,5 +47,5 @@ multitask :test_sauce => [
     #:iPhone_6_Device,
     :iPhone_7_Simulator
 ] do
-  puts 'Running automation'
+  raise StandardError, "Tests failed!" unless @success
 end
