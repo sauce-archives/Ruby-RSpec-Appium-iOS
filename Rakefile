@@ -7,7 +7,7 @@ end
 task default: :test_sauce
 
 task :parallel_run do
-  ENV['app'] = 'https://github.com/saucelabs-sample-test-frameworks/GuineaPig-Sample-App/blob/master/iOS/simulator/GuineaPig-sim-debug.app.zip?raw=true'
+  ENV['app'] = 'https://github.com/saucelabs-sample-test-frameworks/GuineaPig-Sample-App/blob/master/iOS/simulator/SauceGuineaPig-sim-debug.app.zip?raw=true'
 
   begin
     @success = true if @success.nil?

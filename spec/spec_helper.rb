@@ -12,7 +12,7 @@ RSpec.configure do | config |
         deviceOrientation: 'portrait',
         name: example.full_description,
         appiumVersion: ENV['appiumVersion'],
-        build: ENV['BUILD_TAG'] || "Unknown Build",
+        build: ENV['BUILD_TAG'] || "Unknown Build - #{Time.now.to_i}",
     }
 
     @driver = Appium::Driver.new(caps: capabilities)

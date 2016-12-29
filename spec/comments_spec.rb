@@ -11,7 +11,7 @@ describe "Guinea Pig Comments" do
     @driver.find_element(id: 'submit').click
 
     Selenium::WebDriver::Wait.new.until { @driver.find_element(id: 'submittedComments') }
-    comment = @driver.find_element(id: 'submittedComments').text[/^Your comments: (.*)/, 1]
+    comment = @driver.find_element(id: 'submittedComments').text
 
     expect(comment).to eq text
   end
