@@ -15,7 +15,7 @@ RSpec.configure do | config |
         app: "#{ENV['app']}",
         deviceOrientation: 'portrait',
         name: example.full_description,
-        appiumVersion: '1.6'
+        appiumVersion: '1.6.4'
       }
     }
 
