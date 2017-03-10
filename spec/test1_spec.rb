@@ -5,7 +5,7 @@ describe "Appium Test" do
   	# populate text fields with values
   	field_one = @driver.find_element(:accessibility_id, "TextField1")
 
-    for i in 1..100
+    for i in 1..500
       field_one.send_keys("12345567890")
       field_one.clear()
     end
